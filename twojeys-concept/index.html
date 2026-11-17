@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TWOJEYS — Storefront concept</title>
+<meta name="description" content="Redesign concept for the TWOJEYS storefront. Placeholder catalog.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#shop">Skip to shop</a>
+
+<div class="ticker" aria-label="Store notices">
+  <div class="ticker__track" id="ticker"></div>
+</div>
+
+<header class="header" id="header">
+  <button class="icon-btn header__menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 17h18"/></svg>
+  </button>
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="#shop" data-cat="rings">Rings</a>
+    <a href="#shop" data-cat="necklaces">Necklaces</a>
+    <a href="#shop" data-cat="bracelets">Bracelets</a>
+    <a href="#shop" data-cat="earrings">Earrings</a>
+    <a href="#story">Our story</a>
+    <a href="#journal">Journal</a>
+  </nav>
+  <a class="logo" href="#top" aria-label="TWOJEYS home">TWOJEYS</a>
+  <div class="header__actions">
+    <button class="icon-btn" id="searchBtn" aria-label="Search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg>
+    </button>
+    <button class="icon-btn" id="wishBtn" aria-label="Show saved pieces">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.6-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.4-7 10-7 10Z"/></svg>
+      <span class="count" id="wishCount" hidden>0</span>
+    </button>
+    <button class="icon-btn" id="cartBtn" aria-label="Open bag">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span class="count" id="cartCount" hidden>0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero__art" id="heroArt" aria-hidden="true"></div>
+    <div class="hero__copy">
+      <p class="eyebrow">Barcelona · Est. 2019 · 925 sterling silver</p>
+      <h1>Born on<br>the <em>road.</em></h1>
+      <p class="hero__lede">Jewelry for the ones who leave early and come back late. Raw, heavy, made to be worn every day and never taken off.</p>
+      <div class="hero__cta">
+        <a class="btn btn--light" href="#shop">Shop the collection</a>
+        <a class="btn btn--ghost" href="#story">The story</a>
+      </div>
+    </div>
+    <ul class="hero__facts">
+      <li><b>925</b> Sterling silver</li>
+      <li><b>ES</b> Designed in Barcelona</li>
+      <li><b>24h</b> Dispatch</li>
+      <li><b>30</b> Day returns</li>
+    </ul>
+  </section>
+
+  <section class="cats" aria-label="Shop by category">
+    <div class="cats__grid" id="cats"></div>
+  </section>
+
+  <section class="shop" id="shop">
+    <div class="shop__head">
+      <div>
+        <p class="eyebrow eyebrow--dark">The collection</p>
+        <h2 id="shopTitle">All pieces</h2>
+      </div>
+      <p class="shop__count" id="shopCount" aria-live="polite"></p>
+    </div>
+    <div class="toolbar">
+      <div class="chips" id="catChips" role="group" aria-label="Filter by category"></div>
+      <div class="toolbar__right">
+        <div class="chips" id="metalChips" role="group" aria-label="Filter by finish"></div>
+        <label class="sort">
+          <span class="sr">Sort by</span>
+          <select id="sort">
+            <option value="featured">Featured</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+            <option value="name">Name</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>Nothing here yet. <button class="link" id="resetFilters">Clear filters</button></p>
+  </section>
+
+  <div class="band" aria-hidden="true"><div class="band__track" id="band"></div></div>
+
+  <section class="story" id="story">
+    <div class="story__lead">
+      <p class="eyebrow">Our story</p>
+      <h2>Two friends,<br>one car, <em>no plan.</em></h2>
+    </div>
+    <div class="story__body">
+      <p>It started on Route 66. Two friends from Barcelona, a rented car, and a search for jewelry that felt like the trip did: loud, a little worn, free. They couldn't find it, so they came home and made it.</p>
+      <p>Every piece is still drawn in Barcelona and cast in solid 925 sterling silver. It picks up scratches. It is supposed to.</p>
+      <ol class="timeline">
+        <li><b>The trip</b><span>Route 66, coast to coast. The idea.</span></li>
+        <li><b>2019</b><span>First pieces leave a Barcelona workshop.</span></li>
+        <li><b>Today</b><span>Same city, same silver, longer roads.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="craft">
+    <article><span>01</span><h3>Solid silver</h3><p>925 sterling all the way through. No plating to wear off the silver pieces.</p></article>
+    <article><span>02</span><h3>Made to age</h3><p>Hand finished so every scratch adds to it. Polishing cloth included.</p></article>
+    <article><span>03</span><h3>Fits or it's free</h3><p>Wrong ring size? One free exchange on every order, both ways.</p></article>
+    <article><span>04</span><h3>Lifetime repairs</h3><p>Broken clasp, bent band. Send it back and we fix it.</p></article>
+  </section>
+
+  <section class="journal" id="journal">
+    <div class="shop__head">
+      <div><p class="eyebrow eyebrow--dark">Journal</p><h2>From the road</h2></div>
+      <div class="journal__nav">
+        <button class="icon-btn icon-btn--ring" id="jPrev" aria-label="Previous stories"><svg viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></svg></button>
+        <button class="icon-btn icon-btn--ring" id="jNext" aria-label="More stories"><svg viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="journal__rail" id="rail" tabindex="0" aria-label="Journal stories"></div>
+  </section>
+
+  <section class="club">
+    <h2>Join the <em>crew.</em></h2>
+    <p>Early drops, road notes and 10% off your first order.</p>
+    <form id="clubForm" novalidate>
+      <label class="sr" for="email">Email address</label>
+      <input id="email" type="email" placeholder="you@email.com" autocomplete="email" required>
+      <button class="btn btn--light" type="submit">Sign me up</button>
+    </form>
+    <p class="club__msg" id="clubMsg" role="status"></p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__mark" aria-hidden="true">TWOJEYS</div>
+  <div class="footer__cols">
+    <div><h4>Shop</h4><a href="#shop">Rings</a><a href="#shop">Necklaces</a><a href="#shop">Bracelets</a><a href="#shop">Earrings</a></div>
+    <div><h4>Help</h4><a href="#">Shipping</a><a href="#">Returns &amp; exchanges</a><a href="#">Ring size guide</a><a href="#">Care</a></div>
+    <div><h4>Brand</h4><a href="#story">Our story</a><a href="#journal">Journal</a><a href="#">Stores</a><a href="#">Contact</a></div>
+  </div>
+  <p class="footer__note">Design concept. Products, prices and policies shown are placeholders, not the live catalog.</p>
+</footer>
+
+<!-- Search -->
+<div class="search" id="search" hidden>
+  <div class="search__bar">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg>
+    <input id="searchInput" type="search" placeholder="Search rings, chains, cuffs…" aria-label="Search products" autocomplete="off">
+    <button class="icon-btn" id="searchClose" aria-label="Close search"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="search__results" id="searchResults"></div>
+</div>
+
+<!-- Cart -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Shopping bag" aria-hidden="true" inert>
+  <div class="drawer__head">
+    <h3>Your bag <span id="drawerCount"></span></h3>
+    <button class="icon-btn" id="drawerClose" aria-label="Close bag"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="ship">
+    <p id="shipMsg"></p>
+    <div class="ship__bar"><i id="shipFill"></i></div>
+  </div>
+  <div class="drawer__items" id="cartItems"></div>
+  <div class="drawer__foot">
+    <div class="drawer__total"><span>Subtotal</span><b id="subtotal"></b></div>
+    <p class="drawer__small">Taxes included. Shipping calculated at checkout.</p>
+    <button class="btn btn--dark btn--full" id="checkout">Checkout</button>
+  </div>
+</aside>
+
+<!-- Product -->
+<dialog class="pdp" id="pdp" aria-labelledby="pdpName"></dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
